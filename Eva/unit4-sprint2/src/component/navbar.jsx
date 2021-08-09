@@ -1,8 +1,18 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export function Nav() {
+export function Nav({handleMovie2}) {
+    const [data, setData] = useState("")
+    
     return <>
         <Link to="/dashboard">Dashboard</Link>
+        <div>
+            <input type="text" placeholder="Enter Movies Name" onChange={ (e)=>setData(e.target.value)}/>
+            <button onClick={() => {
+                
+                handleMovie2(data)
+            }}>Search</button>
+        </div>
 
         </>
 }
