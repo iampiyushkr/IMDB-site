@@ -2,12 +2,22 @@ import { combineReducers, createStore, applyMiddleware, compose, bindActionCreat
 import { reducer } from "./movieReducer";
 import { actorReducer } from "../ActorStore/actorReducer";
 
-const rootReducer = combineReducers({
+/*const rootReducer = combineReducers({
     actor: actorReducer,
     movie:reducer
     
-})
+})*/
 
-export const store=createStore(rootReducer)
+const customMiddleware = store => next => action => {
+    return typeof action ==="function"?action(store.dispatch,store.getState):next(action)
+}
+
+const composeEnhancers = (typeof window !== 'undefined' && window._REDUX_DEVTOOLS_EXTENSION_COMPOSE_) || compose;
+
+const enhancer = composeEnhancers(
+    applyMiddleware(customMiddleware)
+)
+
+export const store=createStore(reducer,enhancer)
 
 

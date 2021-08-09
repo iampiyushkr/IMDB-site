@@ -25,7 +25,7 @@ const getMovie = () =>(dispatch)=> {
     dispatch(getMovieRequest());
     return axios.get("http://localhost:3001/movies")
         .then((res) => {
-        dispatch(getMovieSuccess(res))
+        dispatch(getMovieSuccess(res.data))
         })
         .catch((err)=> {
     dispatch(getMovieFailure(err))
