@@ -11,6 +11,7 @@ export function TotalMovies() {
                 <img src={ e.img} alt="Done"/>
             <p>Title: {e.name}</p>
             <p>Imdb rating: {e.imdb}</p>
+            <p>Id: { e.id}</p>
             <Link to={`/dashboard/${e.id}`}>more detail</Link>
                 </div>)}
             </div>
