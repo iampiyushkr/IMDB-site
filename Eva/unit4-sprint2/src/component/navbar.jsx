@@ -1,4 +1,8 @@
+import { Link } from "react-router-dom";
+
 export function Nav() {
-    return<>
+    return <>
+        <Link to="/dashboard">Dashboard</Link>
+
         </>
 }

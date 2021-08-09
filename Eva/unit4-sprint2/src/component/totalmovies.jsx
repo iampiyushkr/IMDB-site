@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import "./ComCss.css"
 export function TotalMovies() {
     const state = useSelector(state => state.payload)
@@ -9,7 +10,8 @@ export function TotalMovies() {
             
                 <img src={ e.img} alt="Done"/>
             <p>Title: {e.name}</p>
-            <p>IMDB: { e.imdb}</p>
+            <p>Imdb rating: {e.imdb}</p>
+            <Link to={`/dashboard/${e.id}`}>more detail</Link>
                 </div>)}
             </div>
     </>

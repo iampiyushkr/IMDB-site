@@ -11,7 +11,7 @@ export function Das() {
     }, [])
     
     return <>
-        <Nav />
+        
         <TotalMovies/>
         </>
 }
