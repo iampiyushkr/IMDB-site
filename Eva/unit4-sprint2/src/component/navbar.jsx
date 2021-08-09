@@ -13,7 +13,8 @@ export function Nav({handleMovie2}) {
            <Link to="/result">
             <button onClick={() => {
                 
-                handleMovie2(data)
+                    handleMovie2(data)
+                    setData("")
                 }}>Search</button>
                 </Link>
         </div>
