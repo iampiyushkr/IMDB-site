@@ -14,7 +14,7 @@ const reducer = (state = initialState, { type, data }) => {
         case GET_MOVIE_SUCCESS: {
             return {
                 ...state,
-                movies:data
+                payload:data
             }
         }
         case GET_MOVIE_FAILURE: {
