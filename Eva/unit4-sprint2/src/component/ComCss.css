@@ -6,4 +6,33 @@
   grid-gap: 15%;
 }
 .mainDiv div {
+  background-color: chartreuse;
+  width: 200px;
+  border: 10px solid green;
+}
+.mainDiv > div > img {
+  width: 190px;
+}
+.mainDiv > div > p {
+  color: darkgoldenrod;
+  font-size: 15px;
+  font-weight: bolder;
+}
+.NavDiv {
+  width: 100%;
+  height: 150px;
+  background-color: chartreuse;
+  margin-bottom: 50px;
+}
+.NavDiv button {
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: green;
+  color: aqua;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+.NavDiv input {
+  margin-top: 50px;
 }

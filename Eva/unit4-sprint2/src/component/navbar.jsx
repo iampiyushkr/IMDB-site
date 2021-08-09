@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import "./ComCss.css"
 
 export function Nav({handleMovie2}) {
     const [data, setData] = useState("")
     
-    return <>
-        <Link to="/dashboard">Dashboard</Link>
+    return <div className="NavDiv">
+       <button > <Link to="/dashboard">Dashboard</Link></button>
         <div>
            
             <input type="text" placeholder="Enter Movies Name" onChange={(e) => setData(e.target.value)} />
@@ -17,5 +18,5 @@ export function Nav({handleMovie2}) {
                 </Link>
         </div>
 
-        </>
+        </div>
 }
