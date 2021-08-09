@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_MOVIE_FAILURE, Get_MOVIE_SUCCESS, GET_MOVIE_REQUEST, GET_MOVIE_SUCCESS } from "./actionType";
+import { GET_MOVIE_FAILURE,  GET_MOVIE_REQUEST, GET_MOVIE_SUCCESS } from "./actionType";
 
 const getMovieRequest = () => {
     return {
@@ -9,7 +9,7 @@ const getMovieRequest = () => {
 const getMovieSuccess = (payload) => {
     return {
         type: GET_MOVIE_SUCCESS,
-        payload,
+        data:payload,
 
     };
 };
@@ -17,11 +17,18 @@ const getMovieSuccess = (payload) => {
 const getMovieFailure = (payload) => {
     return {
         type: GET_MOVIE_FAILURE,
-        payload,
+        data:payload,
     };
 };
 
 const getMovie = () =>(dispatch)=> {
     dispatch(getMovieRequest());
-    return axios.get("http://localhost:3001/movie")
+    return axios.get("http://localhost:3001/movies")
+        .then((res) => {
+        dispatch(getMovieSuccess(res))
+        })
+        .catch((err)=> {
+    dispatch(getMovieFailure(err))
+    })
 }
+export {getMovie}
