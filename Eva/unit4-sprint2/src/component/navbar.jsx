@@ -14,7 +14,7 @@ export function Nav({handleMovie2}) {
             <button onClick={() => {
                 
                     handleMovie2(data)
-                    setData("")
+                    
                 }}>Search</button>
                 </Link>
         </div>
