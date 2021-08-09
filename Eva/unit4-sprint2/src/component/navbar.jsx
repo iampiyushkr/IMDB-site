@@ -7,11 +7,14 @@ export function Nav({handleMovie2}) {
     return <>
         <Link to="/dashboard">Dashboard</Link>
         <div>
-            <input type="text" placeholder="Enter Movies Name" onChange={ (e)=>setData(e.target.value)}/>
+           
+            <input type="text" placeholder="Enter Movies Name" onChange={(e) => setData(e.target.value)} />
+           <Link to="/result">
             <button onClick={() => {
                 
                 handleMovie2(data)
-            }}>Search</button>
+                }}>Search</button>
+                </Link>
         </div>
 
         </>
