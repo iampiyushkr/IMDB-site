@@ -1,0 +1,9 @@
+.mainDiv {
+  width: 70%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-gap: 15%;
+}
+.mainDiv div {
+}
